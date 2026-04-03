@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import BucketlistPage from './pages/BucketlistPage'
 import DestinationPage from './pages/DestinationPage'
 import ExplorePage from './pages/ExplorePage'
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <>
-      { /* Lägg din navbar här sen*/ }
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<ExplorePage />} />
