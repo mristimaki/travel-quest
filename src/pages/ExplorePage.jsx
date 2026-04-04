@@ -24,7 +24,16 @@ function ExplorePage() {
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Something went wrong: {error}</p>
-    return <h1>Explore</h1>
+    return (
+        <>
+            <h1>Explore</h1>
+            <ul>
+                {destinations.map((country) => (
+                <li key={country.cca3}>{country.name.common}</li>
+            ))}
+        </ul>
+        </>
+    )
 }
 
 export default ExplorePage
