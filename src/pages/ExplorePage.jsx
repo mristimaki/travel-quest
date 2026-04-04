@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import DestinationCard from "../components/DestinationCard";
 
 
 function ExplorePage() {
@@ -29,7 +30,7 @@ function ExplorePage() {
             <h1>Explore</h1>
             <ul>
                 {destinations.map((country) => (
-                <li key={country.cca3}>{country.name.common}</li>
+                <DestinationCard key={country.cca3} destination={country} />
             ))}
         </ul>
         </>
