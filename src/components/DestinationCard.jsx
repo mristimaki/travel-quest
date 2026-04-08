@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import useBucketlistStore from "../stores/useBucketlistStore";
 
+// Displays a card with country information and allows saving to bucketlist
 function DestinationCard({ destination }) {
+    const addDestination = useBucketlistStore((state) => state.addDestination)
+
     return (
+        <>
         <Link to={`/destination/${destination.cca3}`}>
             <div>
                 <img src={destination.flags.svg} alt={destination.name.common} />
@@ -10,6 +15,10 @@ function DestinationCard({ destination }) {
                 <p>{destination.capital[0]}</p>
             </div>
         </Link>
+        <button onClick={() => addDestination(destination)}>
+            Spara till bucketlist
+        </button>
+        </>
     )
 }
 
