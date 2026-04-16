@@ -1,8 +1,9 @@
-import useBucketlistStore from "../stores/useBucketlistStore"
-import DestinationCard from "../components/DestinationCard"
+import useBucketlistStore from "../stores/useBucketlistStore";
+import DestinationCard from "../components/DestinationCard";
 
 function BucketlistPage() {
-    const destinations = useBucketlistStore((state) => state.destinations)
+    const destinations = useBucketlistStore((state) => state.destinations);
+    const removeDestination = useBucketlistStore((state) => state.removeDestination);
 
     if (destinations.length === 0) return <p>Nothing in your bucketlist yet..</p>
     return (
@@ -10,7 +11,10 @@ function BucketlistPage() {
         <h1>Bucketlist</h1>
         <ul>
             {destinations.map((country) => (
-            <DestinationCard key={country.cca3} destination={country} />
+            <div key={country.cca3}>
+                <DestinationCard destination={country} />
+                <button onClick={() => removeDestination(country.cca3)}>Remove</button>
+            </div>
             ))}
         </ul>
         </>
