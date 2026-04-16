@@ -30,7 +30,7 @@ function ExplorePage() {
             <h1>Explore</h1>
             <ul>
                 {destinations.map((country) => (
-                <DestinationCard key={country.cca3} destination={country} />
+                <DestinationCard key={country.cca3} destination={country} showAdd={true} />
             ))}
         </ul>
         </>
