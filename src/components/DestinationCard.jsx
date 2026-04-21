@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import useBucketlistStore from "../stores/useBucketlistStore";
 
 // Displays a card with country information and allows saving to bucketlist
